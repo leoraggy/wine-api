@@ -60,3 +60,17 @@ export const updateWine = (req, res) => {
     .json({ message: "Wine updated successfully.", date: updatedWine });
 };
 
+export const deleteWine = (req, res) => {
+  const id = Number(req.params.id);
+
+  const deleted = wineService.remove(id);
+
+  if (!deleted) {
+    return res.status(404).json({
+      message: `Wine with id ${id} not found`,
+      data: null,
+    });
+  }
+
+  res.status(200).json({ message: "Wine deleted successfully.", data: null });
+};

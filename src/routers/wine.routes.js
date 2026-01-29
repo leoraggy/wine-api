@@ -14,6 +14,6 @@ router.post("/wines", wineController.createWine);
 
 router.put("/wines/:id", wineController.updateWine);
 
-// router.delete("/wines/:id", wineController.deleteWine)
+router.delete("/wines/:id", wineController.deleteWine)
 
 export default router;
